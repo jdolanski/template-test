@@ -1,6 +1,6 @@
 // Exported from:        http://Jans-MBP:5516/#/templates/Folder8491c205ca70438993ae8a2a6f07bceb-Releasebe0f2fddc7fa470792a32e514d339d71/releasefile
 // XL Release version:   0.0.0-SNAPSHOT
-// Date created:         Tue May 22 15:54:45 CEST 2018
+// Date created:         Wed May 23 08:34:29 CEST 2018
 
 def server(type, title) {
     def cis = configurationApi.searchByTypeAndTitle(type, title)
