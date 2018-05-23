@@ -36,7 +36,7 @@ xlr {
             }
           }
           manual('v') {
-            
+            test('vlsakjf')
           }
         }
       }
