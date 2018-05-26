@@ -1,6 +1,6 @@
-// Exported from:        http://Jans-MBP:5516/#/templates/Folder8491c205ca70438993ae8a2a6f07bceb-Releaseddb3ca65ffb5441eb16ff26df615f7ef/releasefile
+// Exported from:        http://Jans-MacBook-Pro.local:5516/#/templates/Folder8491c205ca70438993ae8a2a6f07bceb-Releaseddb3ca65ffb5441eb16ff26df615f7ef/releasefile
 // XL Release version:   0.0.0-SNAPSHOT
-// Date created:         Fri May 25 14:08:33 CEST 2018
+// Date created:         Sat May 26 20:09:33 CEST 2018
 
 def scmConnectorConfig1 = 'PLEASE IMPLEMENT THIS METHOD'
 
@@ -14,11 +14,8 @@ xlr {
         tasks {
           manual('a') {
             attachments {
-              attachment("sql:Attachmentc3ca560434e647f7a6ce7ccf41a355dc") {
-                filename "attachments/Attachmentc3ca560434e647f7a6ce7ccf41a355dc-1527164395956.JPEG.jpg"
-              }
-              attachment("sql:Attachmentbff35271b69d487a9c331dd8f596f21b") {
-                filename "attachments/Attachmentbff35271b69d487a9c331dd8f596f21b-Delba-Whole-Grain-Muesli-500g.1516893519.jpg"
+              attachment("sql:Attachmente8fe10b8ce434908acc32c15bcc9dd7f") {
+                filename "attachments/Attachmente8fe10b8ce434908acc32c15bcc9dd7f-image.png"
               }
             }
           }
