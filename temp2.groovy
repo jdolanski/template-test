@@ -1,6 +1,6 @@
-// Exported from:        http://Jans-MacBook-Pro.local:5516/#/templates/Released4e27b7958464d9db86eefbbc7872cbc/releasefile
+// Exported from:        http://Jans-MBP:5516/#/templates/Released4e27b7958464d9db86eefbbc7872cbc/releasefile
 // XL Release version:   0.0.0-SNAPSHOT
-// Date created:         Thu May 31 15:50:57 CEST 2018
+// Date created:         Fri Jun 01 09:09:10 CEST 2018
 
 def scmConnectorConfig1 = 'PLEASE IMPLEMENT THIS METHOD'
 
