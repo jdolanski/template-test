@@ -1,6 +1,6 @@
 // Exported from:        http://Jans-MBP:5516/#/templates/Released4e27b7958464d9db86eefbbc7872cbc/releasefile
 // XL Release version:   0.0.0-SNAPSHOT
-// Date created:         Mon Jun 04 09:08:14 CEST 2018
+// Date created:         Mon Jun 04 09:09:17 CEST 2018
 
 def scmConnectorConfig1 = 'PLEASE IMPLEMENT THIS METHOD'
 
