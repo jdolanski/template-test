@@ -1,6 +1,6 @@
 // Exported from:        http://Jans-MBP:5516/#/templates/Release60214d2073f44ff689aec2cb10b46d08/releasefile
 // XL Release version:   0.0.0-SNAPSHOT
-// Date created:         Mon Jun 04 10:40:58 CEST 2018
+// Date created:         Mon Jun 04 11:13:03 CEST 2018
 
 def scmConnectorConfig1 = 'PLEASE IMPLEMENT THIS METHOD'
 
@@ -12,15 +12,12 @@ xlr {
       phase('New Phase') {
         tasks {
           manual('afda') {
-            
+            locked true
           }
           manual('fda') {
             
           }
-          manual('f') {
-            
-          }
-          manual('fd') {
+          gate('fd') {
             
           }
           manual('a') {
