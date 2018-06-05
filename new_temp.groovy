@@ -1,6 +1,6 @@
 // Exported from:        http://Jans-MBP:5516/#/templates/Release60214d2073f44ff689aec2cb10b46d08/releasefile
 // XL Release version:   0.0.0-SNAPSHOT
-// Date created:         Tue Jun 05 12:16:16 CEST 2018
+// Date created:         Tue Jun 05 12:19:04 CEST 2018
 
 def scmConnectorConfig1 = 'PLEASE IMPLEMENT THIS METHOD'
 
@@ -12,6 +12,14 @@ xlr {
       phase('New Phase') {
         tasks {
           manual('afda') {
+            attachments {
+              attachment("sql:Attachment301bd419048f48c0b43d8ccf8bdfba1e") {
+                filename "attachments/Attachment301bd419048f48c0b43d8ccf8bdfba1e-image-1.png"
+              }
+              attachment("sql:Attachment7c971cb2ddd64a4aada33a5212005af5") {
+                filename "attachments/Attachment7c971cb2ddd64a4aada33a5212005af5-lovro.jpg"
+              }
+            }
             locked true
           }
           manual('fda') {
