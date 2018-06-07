@@ -1,6 +1,6 @@
-// Exported from:        http://Jans-MBP:5516/#/templates/Release60214d2073f44ff689aec2cb10b46d08/releasefile
+// Exported from:        http://Jans-MacBook-Pro.local:5516/#/templates/Release60214d2073f44ff689aec2cb10b46d08/releasefile
 // XL Release version:   0.0.0-SNAPSHOT
-// Date created:         Wed Jun 06 15:19:21 CEST 2018
+// Date created:         Thu Jun 07 22:51:04 CEST 2018
 
 def scmConnectorConfig1 = 'PLEASE IMPLEMENT THIS METHOD'
 
@@ -28,7 +28,6 @@ xlr {
                 filename "attachments/Attachmentc3b2ea5f691e4a8eb84862fce8e9f29c-Screen Shot 2018-05-24 at 16.49.20.png"
               }
             }
-            locked true
           }
           gate('fd') {
             
