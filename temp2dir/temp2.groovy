@@ -1,13 +1,12 @@
-// Exported from:        http://Jans-MBP:5516/#/templates/Folder8491c205ca70438993ae8a2a6f07bceb-Releaseddb3ca65ffb5441eb16ff26df615f7ef/releasefile
+// Exported from:        http://Jans-MBP:5516/#/templates/Release1ad8b7a2e7304b8d99ae922c39ccd911/releasefile
 // XL Release version:   0.0.0-SNAPSHOT
-// Date created:         Wed May 30 12:40:14 CEST 2018
+// Date created:         Fri Jun 08 17:07:51 CEST 2018
 
 def scmConnectorConfig1 = 'PLEASE IMPLEMENT THIS METHOD'
 
 xlr {
-  template('newTemplate') {
-    folder('fdasfas')
-    scheduledStartDate Date.parse("yyyy-MM-dd'T'HH:mm:ssZ", '2018-05-24T09:00:00+0200')
+  template('temptest') {
+    scheduledStartDate Date.parse("yyyy-MM-dd'T'HH:mm:ssZ", '2018-06-08T09:00:00+0200')
     scmConnectorConfig scmConnectorConfig1
     phases {
       phase('New Phase') {
@@ -19,18 +18,19 @@ xlr {
             
           }
           manual('c') {
-            attachments {
-              attachment("sql:Attachment795d541edb9f42a2807d7bf506ca43dd") {
-                filename "attachments/Attachment795d541edb9f42a2807d7bf506ca43dd-lovro.jpg"
-              }
-              attachment("sql:Attachmentba1560c5bde34e0398c17034be5ed666") {
-                filename "attachments/Attachmentba1560c5bde34e0398c17034be5ed666-Releasefile 2.groovy"
-              }
-            }
+            
           }
         }
       }
     }
-           
+    teams {
+      team('Template Owner') {
+        members 'admin'
+        permissions 'template#edit', 'template#lock_task', 'template#view', 'template#edit_triggers', 'template#edit_security', 'template#create_release'
+      }
+      team('Release Admin') {
+        permissions 'release#edit', 'release#lock_task', 'release#start', 'release#reassign_task', 'release#edit_blackout', 'template#view', 'release#edit_security', 'release#abort', 'release#view', 'release#edit_task'
+      }
+    }
   }
 }
