@@ -1,6 +1,6 @@
 // Exported from:        http://Jans-MBP:5516/#/templates/Release1ad8b7a2e7304b8d99ae922c39ccd911/releasefile
 // XL Release version:   0.0.0-SNAPSHOT
-// Date created:         Tue Jun 12 17:10:22 CEST 2018
+// Date created:         Tue Jun 12 17:13:14 CEST 2018
 
 xlr {
   template('temptest') {
@@ -22,7 +22,11 @@ xlr {
             
           }
           manual('fdjlkalfkd') {
-            
+            attachments {
+              attachment("sql:Attachment256345f2da40456ba23bbae049264a2b") {
+                filename "attachments/Attachment256345f2da40456ba23bbae049264a2b-zzzzzzz.xlr"
+              }
+            }
           }
         }
       }
