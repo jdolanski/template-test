@@ -1,6 +1,6 @@
 // Exported from:        http://Jans-MBP:5516/#/templates/Release1ad8b7a2e7304b8d99ae922c39ccd911/releasefile
 // XL Release version:   0.0.0-SNAPSHOT
-// Date created:         Mon Jun 11 15:04:26 CEST 2018
+// Date created:         Tue Jun 12 13:15:12 CEST 2018
 
 xlr {
   template('temptest') {
@@ -15,7 +15,7 @@ xlr {
             
           }
           manual('c') {
-            locked true
+            
           }
         }
       }
