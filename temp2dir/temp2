@@ -1,6 +1,6 @@
 // Exported from:        http://Jans-MBP:5516/#/templates/Release1ad8b7a2e7304b8d99ae922c39ccd911/releasefile
 // XL Release version:   0.0.0-SNAPSHOT
-// Date created:         Tue Jun 12 13:23:36 CEST 2018
+// Date created:         Tue Jun 12 13:32:01 CEST 2018
 
 xlr {
   template('temptest') {
@@ -14,26 +14,24 @@ xlr {
           manual('b') {
             
           }
-          manual('c') {
-            attachments {
-              attachment("sql:Attachment82ce7d488925493ab1e577ea7b50a833") {
-                filename "attachments/Attachment82ce7d488925493ab1e577ea7b50a833-image-4.png"
-              }
-              attachment("sql:Attachment41936816e5914fe097c6b497ef76076a") {
-                filename "attachments/Attachment41936816e5914fe097c6b497ef76076a-image-2.png"
-              }
-              attachment("sql:Attachmentea10b3cd3c8c41ccb5bd8a53985a1c61") {
-                filename "attachments/Attachmentea10b3cd3c8c41ccb5bd8a53985a1c61-image-3.png"
-              }
-              attachment("sql:Attachment93559d45d2624029a0e7c268b208e013") {
-                filename "attachments/Attachment93559d45d2624029a0e7c268b208e013-image-1.png"
-              }
-              attachment("sql:Attachment1045917562784e4387e58731828b7ca4") {
-                filename "attachments/Attachment1045917562784e4387e58731828b7ca4-image-5.png"
-              }
-            }
-          }
         }
+      }
+    }
+    attachments {
+      attachment("sql:Attachment93559d45d2624029a0e7c268b208e013") {
+        filename "attachments/Attachment93559d45d2624029a0e7c268b208e013-image-1.png"
+      }
+      attachment("sql:Attachment41936816e5914fe097c6b497ef76076a") {
+        filename "attachments/Attachment41936816e5914fe097c6b497ef76076a-image-2.png"
+      }
+      attachment("sql:Attachmentea10b3cd3c8c41ccb5bd8a53985a1c61") {
+        filename "attachments/Attachmentea10b3cd3c8c41ccb5bd8a53985a1c61-image-3.png"
+      }
+      attachment("sql:Attachment82ce7d488925493ab1e577ea7b50a833") {
+        filename "attachments/Attachment82ce7d488925493ab1e577ea7b50a833-image-4.png"
+      }
+      attachment("sql:Attachment1045917562784e4387e58731828b7ca4") {
+        filename "attachments/Attachment1045917562784e4387e58731828b7ca4-image-5.png"
       }
     }
     teams {
