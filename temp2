@@ -1,0 +1,40 @@
+// Exported from:        http://Jans-MBP:5516/#/templates/Releaseaabe15c1793440b5aabdf8e34d9bd387/releasefile
+// XL Release version:   8.1.0-SNAPSHOT
+// Date created:         Wed Jun 13 10:57:47 CEST 2018
+
+xlr {
+  template('temptest') {
+    scheduledStartDate Date.parse("yyyy-MM-dd'T'HH:mm:ssZ", '2018-06-13T09:00:00+0200')
+    phases {
+      phase('New Phase') {
+        tasks {
+          manual('a') {
+            
+          }
+          manual('b') {
+            locked true
+          }
+          manual('c') {
+            attachments {
+              attachment("sql:Attachment18bdebf582de40d1bb460c711ea33c45") {
+                filename "attachments/Attachment18bdebf582de40d1bb460c711ea33c45-image-1.png"
+              }
+            }
+          }
+          manual('d') {
+            
+          }
+        }
+      }
+    }
+    teams {
+      team('Template Owner') {
+        members 'admin'
+        permissions 'template#edit', 'template#lock_task', 'template#view', 'template#edit_triggers', 'template#edit_security', 'template#create_release'
+      }
+      team('Release Admin') {
+        permissions 'release#edit', 'release#lock_task', 'release#start', 'release#reassign_task', 'release#edit_blackout', 'template#view', 'release#edit_security', 'release#abort', 'release#view', 'release#edit_task'
+      }
+    }
+  }
+}
