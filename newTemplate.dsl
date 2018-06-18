@@ -1,6 +1,6 @@
 // Exported from:        http://Jans-MacBook-Pro.local:5516/#/templates/Folderab54501912f4292b81555a88cf5ad2a-Release4fd34e59cb824e06b17627d425ba103a/releasefile
 // XL Release version:   8.1.0-rc.4
-// Date created:         Mon Jun 18 15:57:29 CEST 2018
+// Date created:         Mon Jun 18 16:01:03 CEST 2018
 
 xlr {
   template('newTemplate') {
@@ -11,7 +11,7 @@ xlr {
       phase('New Phase') {
         tasks {
           manual('a') {
-            
+            locked true
           }
           manual('b') {
             flagStatus com.xebialabs.xlrelease.domain.status.FlagStatus.ATTENTION_NEEDED
