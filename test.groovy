@@ -1,6 +1,6 @@
 // Exported from:        http://Jans-MBP:5516/#/templates/Folder560dc180ea034408aa5d3ad2b7773119-Releasef74b2732158e452b9d7cae7f6edd56aa/releasefile
 // XL Release version:   8.1.0-SNAPSHOT
-// Date created:         Fri Jul 27 14:06:57 CEST 2018
+// Date created:         Fri Jul 27 14:07:41 CEST 2018
 
 xlr {
   template('template1') {
