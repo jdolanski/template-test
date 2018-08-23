@@ -1,6 +1,6 @@
 // Exported from:        http://Jans-MBP:5516/#/templates/Folder89f25375db604d69956f790eaeb97481-Release901d1a5be9b1446b83122b1e958ba923/releasefile
 // XL Release version:   8.1.0-SNAPSHOT
-// Date created:         Thu Aug 23 12:48:46 CEST 2018
+// Date created:         Thu Aug 23 12:50:29 CEST 2018
 
 xlr {
   template('templateakka test') {
@@ -53,7 +53,17 @@ xlr {
             
           }
           manual('a') {
-            
+            attachments {
+              attachment("sql:Attachmentfba759d09032440488ed5ca9580694f3") {
+                filename "attachments/Attachmentfba759d09032440488ed5ca9580694f3-output0.dat"
+              }
+              attachment("sql:Attachmentc87a06c6c1004ddfa30b73a7bd9dd183") {
+                filename "attachments/Attachmentc87a06c6c1004ddfa30b73a7bd9dd183-output1.dat"
+              }
+              attachment("sql:Attachment7253964286df4b8d81896a34e653cdf8") {
+                filename "attachments/Attachment7253964286df4b8d81896a34e653cdf8-output2.dat"
+              }
+            }
           }
         }
       }
