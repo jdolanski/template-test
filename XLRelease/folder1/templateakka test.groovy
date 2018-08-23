@@ -1,6 +1,6 @@
 // Exported from:        http://Jans-MBP:5516/#/templates/Folder89f25375db604d69956f790eaeb97481-Release901d1a5be9b1446b83122b1e958ba923/releasefile
 // XL Release version:   8.1.0-SNAPSHOT
-// Date created:         Thu Aug 23 12:47:13 CEST 2018
+// Date created:         Thu Aug 23 12:48:46 CEST 2018
 
 xlr {
   template('templateakka test') {
@@ -9,19 +9,6 @@ xlr {
     phases {
       phase('New Phase') {
         tasks {
-          manual('v') {
-            
-          }
-          manual('a') {
-            attachments {
-              attachment("sql:Attachment283c3d77530e4eee9cdf5b68cfe2c99c") {
-                filename "attachments/Attachment283c3d77530e4eee9cdf5b68cfe2c99c-output0.dat"
-              }
-              attachment("sql:Attachment894a89d5ef54ee3bdab3413e0769347") {
-                filename "attachments/Attachment894a89d5ef54ee3bdab3413e0769347-output1.dat"
-              }
-            }
-          }
           manual('attachments') {
             attachments {
               attachment("sql:Attachment35c4735c58b44cfb1be5e7bdd2063cd") {
@@ -61,6 +48,12 @@ xlr {
                 filename "attachments/Attachment7ebc6afe7730442787034d4c926a5811-image-14.png"
               }
             }
+          }
+          manual('v') {
+            
+          }
+          manual('a') {
+            
           }
         }
       }
