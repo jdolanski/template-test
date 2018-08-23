@@ -1,6 +1,6 @@
 // Exported from:        http://Jans-MBP:5516/#/templates/Folder89f25375db604d69956f790eaeb97481-Release901d1a5be9b1446b83122b1e958ba923/releasefile
 // XL Release version:   8.1.0-SNAPSHOT
-// Date created:         Thu Aug 23 12:14:35 CEST 2018
+// Date created:         Thu Aug 23 12:15:44 CEST 2018
 
 xlr {
   template('templateakka test') {
@@ -20,6 +20,9 @@ xlr {
               attachment("sql:Attachment35c4735c58b44cfb1be5e7bdd2063cd") {
                 filename "attachments/Attachment35c4735c58b44cfb1be5e7bdd2063cd-image-4.png"
               }
+              attachment("sql:Attachmentf302c382782448b4b87f43d04bf49a0e") {
+                filename "attachments/Attachmentf302c382782448b4b87f43d04bf49a0e-Screen Shot 2018-08-21 at 11.06.03.png"
+              }
               attachment("sql:Attachmentc8e71432c6de4d8794f28222ceb22dfe") {
                 filename "attachments/Attachmentc8e71432c6de4d8794f28222ceb22dfe-image-2.png"
               }
@@ -28,6 +31,9 @@ xlr {
               }
               attachment("sql:Attachmentf4910c4852924fe7a621df1fc573c57e") {
                 filename "attachments/Attachmentf4910c4852924fe7a621df1fc573c57e-Algebra_Cheat_Sheet_Reduced.pdf"
+              }
+              attachment("sql:Attachment5b7b7ceec7354d769b3fc09a48c97d29") {
+                filename "attachments/Attachment5b7b7ceec7354d769b3fc09a48c97d29-ul4263-xlr-logs.zip"
               }
               attachment("sql:Attachment316a790396d24bdc879a6c82d7f750dd") {
                 filename "attachments/Attachment316a790396d24bdc879a6c82d7f750dd-image-3.png"
