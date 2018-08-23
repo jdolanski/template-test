@@ -1,6 +1,6 @@
 // Exported from:        http://Jans-MBP:5516/#/templates/Folder89f25375db604d69956f790eaeb97481-Release901d1a5be9b1446b83122b1e958ba923/releasefile
 // XL Release version:   8.1.0-SNAPSHOT
-// Date created:         Thu Aug 23 12:16:05 CEST 2018
+// Date created:         Thu Aug 23 12:43:46 CEST 2018
 
 xlr {
   template('templateakka test') {
@@ -31,6 +31,9 @@ xlr {
               }
               attachment("sql:Attachmentf4910c4852924fe7a621df1fc573c57e") {
                 filename "attachments/Attachmentf4910c4852924fe7a621df1fc573c57e-Algebra_Cheat_Sheet_Reduced.pdf"
+              }
+              attachment("sql:Attachment7a41cdb0fd5f46958182253f484a7592") {
+                filename "attachments/Attachment7a41cdb0fd5f46958182253f484a7592-output.dat"
               }
               attachment("sql:Attachment5b7b7ceec7354d769b3fc09a48c97d29") {
                 filename "attachments/Attachment5b7b7ceec7354d769b3fc09a48c97d29-ul4263-xlr-logs.zip"
