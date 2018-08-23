@@ -1,6 +1,6 @@
 // Exported from:        http://Jans-MBP:5516/#/templates/Folder89f25375db604d69956f790eaeb97481-Release901d1a5be9b1446b83122b1e958ba923/releasefile
 // XL Release version:   8.1.0-SNAPSHOT
-// Date created:         Thu Aug 23 10:35:07 CEST 2018
+// Date created:         Thu Aug 23 10:36:24 CEST 2018
 
 xlr {
   template('templateakka test') {
@@ -9,10 +9,10 @@ xlr {
     phases {
       phase('New Phase') {
         tasks {
-          manual('a') {
+          manual('v') {
             
           }
-          manual('v') {
+          manual('a') {
             
           }
           manual('attachments') {
