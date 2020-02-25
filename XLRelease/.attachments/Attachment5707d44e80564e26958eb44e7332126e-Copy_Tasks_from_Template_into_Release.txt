@@ -1,0 +1,8 @@
+### Source code that copies tasks from another template into current release
+###
+for phase in templateList[0]['phases']:
+    print "Adding phase %s\n" % phase['title']
+    newphase = phaseApi.addPhase(release.id, phase, None)
+    for task in phase['tasks']:
+        print "Adding task %s\n" % task['title']
+        newtask = taskApi.addTask(newphase.id, task)
