@@ -17,7 +17,7 @@ xlr {
             flagStatus com.xebialabs.xlrelease.domain.status.FlagStatus.ATTENTION_NEEDED
           }
           manual('c') {
-            locked true
+            locked false
           }
         }
       }
