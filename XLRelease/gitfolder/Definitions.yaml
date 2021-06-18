@@ -1,0 +1,28 @@
+# Exported from:        http://pop-os:5516/
+# Release version:      10.2.0-SNAPSHOT
+# Date created:         Fri Jun 18 14:37:48 CEST 2021
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  home: gitfolder
+spec:
+- name: git1
+  type: git.Repository
+  url: https://github.com/jdolanski/demo_test
+  username: jdolanski
+  password: !value "git_Repository_git1_password"
+- name: git2
+  type: git.Repository
+  url: https://github.com/jdolanski/template-test
+  username: jdolanski
+  password: !value "git_Repository_git2_password"
+- template: template1
+  scheduledStartDate: 2021-06-18T09:00:00+02:00
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: a
+      type: xlrelease.Task
+  riskProfile: Default risk profile
