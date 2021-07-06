@@ -1,30 +1,20 @@
-# Exported from:        http://pop-os:5516/
-# Release version:      10.2.0-20210603-123974
-# Date created:         Mon Jul 05 12:12:07 CEST 2021
+# Exported from:        http://DESKTOP-ICHOVAV:5516/
+# Release version:      10.2.0-SNAPSHOT
+# Date created:         Tue Jul 06 19:05:31 CEST 2021
 
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  home: folder1
+  home: f1
 spec:
 - template: template1
   scheduledStartDate: 2021-07-05T09:00:00+02:00
+  dueDate: 2021-07-05T10:00:00+02:00
   phases:
   - phase: New Phase
   riskProfile: Default risk profile
 - notifications:
-  - notification: TASK_FLAGGED
-    priority: High
-    subject: "[Release] ${release.title}: ${task.title}"
-    body: |-
-      The status of the **${task.title}** task in the **${release.title}** release was changed to **${task.flagStatus}** with the following comment:
-
-      **${release.flagComment}**
-    roles:
-    - Watcher
-    - Release Admin
-    - Task Team
   - notification: TASK_OVERDUE
     priority: High
     subject: "[Release] ${release.title}: ${task.title}"
@@ -36,6 +26,24 @@ spec:
     - Watcher
     - Release Admin
     - Task Owner
+  - notification: TASK_FLAGGED
+    priority: High
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The status of the **${task.title}** task in the **${release.title}** release was changed to **${task.flagStatus}** with the following comment:
+
+      **${release.flagComment}**
+    roles:
+    - Watcher
+    - Release Admin
+    - Task Team
+  - notification: AUDIT_REPORT_JOB_ABORTED
+    priority: Normal
+    subject: "[Release] Audit report was aborted"
+    body: |-
+      **Your audit report was aborted!**
+
+       Please try to generate it again or contact your Release administrator for assistance.
   - notification: MANUAL_TASK_STARTED
     priority: Normal
     subject: "[Release] ${release.title}: ${task.title}"
@@ -59,6 +67,12 @@ spec:
     - Watcher
     - Task Team
     - Task Owner
+  - notification: USER_MENTIONED
+    priority: Normal
+    subject: "[Release] ${mentionedByFullName} mentioned you on ${release.title}:\
+      \ ${task.title}"
+    body: "**${mentionedByFullName}** mentioned you on the **${task.title}** task\
+      \ in the **${release.title}** release:"
   - notification: COMMENT_ADDED
     priority: Normal
     subject: "[Release] ${release.title}: ${task.title}"
@@ -70,6 +84,13 @@ spec:
     - Watcher
     - Task Team
     - Task Owner
+  - notification: AUDIT_REPORT_JOB_FAILED
+    priority: Normal
+    subject: "[Release] Audit report has failed"
+    body: |-
+      **Your audit report has failed!**
+
+       Please try to generate it again or contact your Release administrator for assistance.
   - notification: RELEASE_FAILED
     priority: High
     subject: "[Release] ${release.title}"
@@ -150,16 +171,23 @@ spec:
     - Watcher
     - Task Team
     - Task Owner
-  - notification: RELEASE_ABORTED
+  - notification: AUDIT_REPORT_JOB_COMPLETED
     priority: Normal
-    subject: "[Release] ${release.title}"
-    body: "The **${release.title}** release has been aborted."
-    roles:
-    - Release Admin
+    subject: "[Release] Report '${report.reportName}' is ready"
+    body: |-
+      **Your audit report is complete!**
+
+       '${report.reportName}' is ready for download.
   - notification: RELEASE_STARTED
     priority: Normal
     subject: "[Release] ${release.title}"
     body: "The **${release.title}** release has been started."
+    roles:
+    - Release Admin
+  - notification: RELEASE_ABORTED
+    priority: Normal
+    subject: "[Release] ${release.title}"
+    body: "The **${release.title}** release has been aborted."
     roles:
     - Release Admin
   - notification: ACTIVE_TASK_ASSIGNED
