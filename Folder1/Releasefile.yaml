@@ -1,13 +1,16 @@
-# Exported from:        http://DESKTOP-ICHOVAV:5516/
-# Release version:      10.2.0-SNAPSHOT
-# Date created:         Tue Jul 06 19:05:31 CEST 2021
+# Exported from:        http://pop-os:5516/
+# Release version:      10.2.0-20210603-123974
+# Date created:         Wed Jul 07 14:31:35 CEST 2021
 
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  home: f1
+  home: folder1
 spec:
+- folderVariables:
+  - type: xlrelease.StringVariable
+    key: folder.a
 - template: template1
   scheduledStartDate: 2021-07-05T09:00:00+02:00
   dueDate: 2021-07-05T10:00:00+02:00
