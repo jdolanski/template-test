@@ -1,6 +1,6 @@
 # Exported from:        http://pop-os:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Tue Oct 26 18:49:41 CEST 2021
+# Date created:         Tue Oct 26 18:58:30 CEST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -8,18 +8,437 @@ kind: Templates
 metadata:
   home: f1
 spec:
+- folderVariables:
+  - type: xlrelease.StringVariable
+    key: folder.var1
+  - type: xlrelease.StringVariable
+    key: folder.var2
+- name: jenkins1
+  type: jenkins.Server
+  url: a
+- name: jenkins2
+  type: jenkins.Server
+  url: a
+  username: a
+- pattern: pattern1
+  stages:
+  - stage: New Stage
+- pattern: pattern2
+  stages:
+  - stage: New Stage
+- template: template1
+  scheduledStartDate: 2021-10-26T09:00:00+02:00
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: template2
+  scheduledStartDate: 2021-10-26T09:00:00+02:00
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- name: Deployments
+  type: xlrelease.DeploymentsByStageDashboard
+  owner: admin
+  tiles:
+  - type: xlrelease.PlaceholderTile
+    row: 0
+    col: 0
+    content: Development
+  - name: Current applications
+    type: deployment.CurrentApplicationsTile
+    width: 1
+    height: 1
+    row: 1
+    col: 0
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Development
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+  - name: Activity
+    type: deployment.DeploymentsActivityTile
+    width: 1
+    row: 2
+    col: 0
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Development
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+  - name: Total deployments
+    type: deployment.TotalDeploymentsTile
+    width: 1
+    height: 1
+    row: 4
+    col: 0
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Development
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+  - name: Deployments
+    type: deployment.DeploymentsDistributionTile
+    width: 1
+    row: 5
+    col: 0
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Development
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+    height: 1
+  - name: Deployment success rate
+    type: deployment.DeploymentsSuccessRateTile
+    width: 1
+    height: 1
+    row: 6
+    col: 0
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Development
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+  - type: xlrelease.PlaceholderTile
+    row: 0
+    col: 1
+    content: Test
+  - name: Current applications
+    type: deployment.CurrentApplicationsTile
+    width: 1
+    height: 1
+    row: 1
+    col: 1
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Test
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+  - name: Activity
+    type: deployment.DeploymentsActivityTile
+    width: 1
+    row: 2
+    col: 1
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Test
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+  - name: Total deployments
+    type: deployment.TotalDeploymentsTile
+    width: 1
+    height: 1
+    row: 4
+    col: 1
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Test
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+  - name: Deployments
+    type: deployment.DeploymentsDistributionTile
+    width: 1
+    row: 5
+    col: 1
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Test
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+    height: 1
+  - name: Deployment success rate
+    type: deployment.DeploymentsSuccessRateTile
+    width: 1
+    height: 1
+    row: 6
+    col: 1
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Test
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+  - type: xlrelease.PlaceholderTile
+    row: 0
+    col: 2
+    content: Acceptance
+  - name: Current applications
+    type: deployment.CurrentApplicationsTile
+    width: 1
+    height: 1
+    row: 1
+    col: 2
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Acceptance
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+  - name: Activity
+    type: deployment.DeploymentsActivityTile
+    width: 1
+    row: 2
+    col: 2
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Acceptance
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+  - name: Total deployments
+    type: deployment.TotalDeploymentsTile
+    width: 1
+    height: 1
+    row: 4
+    col: 2
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Acceptance
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+  - name: Deployments
+    type: deployment.DeploymentsDistributionTile
+    width: 1
+    row: 5
+    col: 2
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Acceptance
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+    height: 1
+  - name: Deployment success rate
+    type: deployment.DeploymentsSuccessRateTile
+    width: 1
+    height: 1
+    row: 6
+    col: 2
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Acceptance
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+  - type: xlrelease.PlaceholderTile
+    row: 0
+    col: 3
+    content: Production
+  - name: Current applications
+    type: deployment.CurrentApplicationsTile
+    width: 1
+    height: 1
+    row: 1
+    col: 3
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Production
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+  - name: Activity
+    type: deployment.DeploymentsActivityTile
+    width: 1
+    row: 2
+    col: 3
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Production
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+  - name: Total deployments
+    type: deployment.TotalDeploymentsTile
+    width: 1
+    height: 1
+    row: 4
+    col: 3
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Production
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+  - name: Deployments
+    type: deployment.DeploymentsDistributionTile
+    width: 1
+    row: 5
+    col: 3
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Production
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+    height: 1
+  - name: Deployment success rate
+    type: deployment.DeploymentsSuccessRateTile
+    width: 1
+    height: 1
+    row: 6
+    col: 3
+    filters:
+    - type: xlrelease.EnvironmentStageFilter
+      stage: Production
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+  columns: 4
+  filters:
+  - type: xlrelease.FolderFilter
+    folder: ./
+  - type: xlrelease.DateFilter
+    timeFrame: LAST_MONTH
+- name: Release statistics
+  type: xlrelease.ReleaseStatisticsDashboard
+  owner: admin
+  tiles:
+  - name: Longest task type
+    type: xlrelease.LongestTaskTypeTile
+    row: 0
+    col: 1
+    filters:
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Number of releases
+    type: xlrelease.ReleasesByMonthTile
+    row: 2
+    col: 3
+    filters:
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Release efficiency
+    type: xlrelease.ReleaseEfficiencyTile
+    row: 2
+    col: 0
+    filters:
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Avg. task duration
+    type: xlrelease.AvgTaskDurationTile
+    row: 1
+    col: 1
+    filters:
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Time spent by task category
+    type: xlrelease.TaskTimeSpentTile
+    row: 0
+    col: 4
+    filters:
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Completed releases
+    type: xlrelease.CompletedReleasesTile
+    row: 0
+    col: 0
+    filters:
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Avg. release duration
+    type: xlrelease.AvgReleaseDurationTile
+    row: 1
+    col: 0
+    filters:
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Task efficiency
+    type: xlrelease.TaskEfficiencyTile
+    row: 0
+    col: 2
+    filters:
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Top 10 longest releases
+    type: xlrelease.LongestReleasesTile
+    row: 4
+    col: 0
+    filters:
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Avg. release duration over time
+    type: xlrelease.AvgReleaseDurationByMonthTile
+    row: 4
+    col: 3
+    filters:
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Top 10 longest phases
+    type: xlrelease.LongestPhasesTile
+    row: 6
+    col: 0
+    filters:
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  - name: Top 10 longest tasks
+    type: xlrelease.LongestTasksTile
+    row: 6
+    col: 3
+    filters:
+    - type: xlrelease.FolderFilter
+      folder: ./
+    - type: xlrelease.DateFilter
+  filters:
+  - type: xlrelease.FolderFilter
+    folder: ./
+  - type: xlrelease.DateFilter
+- name: t1
+  type: time.Schedule
+  releaseTitle: fafafa
+  template: template1
+  releaseFolder: ./
+  pollType: REPEAT
+  periodicity: "100"
+  triggerTime: 2021-10-26T18:58:24.552000
+- name: trigger2
+  type: time.Schedule
+  releaseTitle: fdsafsafsafsaf
+  template: template2
+  releaseFolder: ./
+  pollType: REPEAT
+  periodicity: "300"
+  triggerTime: 2021-10-26T18:57:20.539000
 - notifications:
-  - notification: TASK_OVERDUE
-    priority: High
-    subject: "[Release] ${release.title}: ${task.title}"
-    body: |-
-      The **${task.title}** task in the **${release.title}** release is overdue.
-
-      After the task is completed, please mark it as Completed in Release.
-    roles:
-    - Watcher
-    - Release Admin
-    - Task Owner
   - notification: TASK_FLAGGED
     priority: High
     subject: "[Release] ${release.title}: ${task.title}"
@@ -31,13 +450,17 @@ spec:
     - Watcher
     - Release Admin
     - Task Team
-  - notification: AUDIT_REPORT_JOB_ABORTED
-    priority: Normal
-    subject: "[Release] Audit report was aborted"
+  - notification: TASK_OVERDUE
+    priority: High
+    subject: "[Release] ${release.title}: ${task.title}"
     body: |-
-      **Your audit report was aborted!**
+      The **${task.title}** task in the **${release.title}** release is overdue.
 
-       Please try to generate it again or contact your Release administrator for assistance.
+      After the task is completed, please mark it as Completed in Release.
+    roles:
+    - Watcher
+    - Release Admin
+    - Task Owner
   - notification: MANUAL_TASK_STARTED
     priority: Normal
     subject: "[Release] ${release.title}: ${task.title}"
@@ -61,12 +484,6 @@ spec:
     - Watcher
     - Task Team
     - Task Owner
-  - notification: USER_MENTIONED
-    priority: Normal
-    subject: "[Release] ${mentionedByFullName} mentioned you on ${release.title}:\
-      \ ${task.title}"
-    body: "**${mentionedByFullName}** mentioned you on the **${task.title}** task\
-      \ in the **${release.title}** release:"
   - notification: COMMENT_ADDED
     priority: Normal
     subject: "[Release] ${release.title}: ${task.title}"
@@ -78,13 +495,6 @@ spec:
     - Watcher
     - Task Team
     - Task Owner
-  - notification: AUDIT_REPORT_JOB_FAILED
-    priority: Normal
-    subject: "[Release] Audit report has failed"
-    body: |-
-      **Your audit report has failed!**
-
-       Please try to generate it again or contact your Release administrator for assistance.
   - notification: RELEASE_FAILED
     priority: High
     subject: "[Release] ${release.title}"
@@ -165,37 +575,16 @@ spec:
     - Watcher
     - Task Team
     - Task Owner
-  - notification: AUDIT_REPORT_JOB_COMPLETED
-    priority: Normal
-    subject: "[Release] Report '${report.reportName}' is ready"
-    body: |-
-      **Your audit report is complete!**
-
-       '${report.reportName}' is ready for download.
-  - notification: RELEASE_STARTED
-    priority: Normal
-    subject: "[Release] ${release.title}"
-    body: "The **${release.title}** release has been started."
-    bulkSubject: "[Release] Multiple releases started"
-    bulkBody: |-
-      The following releases have been started:
-
-      ${#releases}
-      * [${title}](${url})
-      ${/releases}
-    roles:
-    - Release Admin
   - notification: RELEASE_ABORTED
     priority: Normal
     subject: "[Release] ${release.title}"
     body: "The **${release.title}** release has been aborted."
-    bulkSubject: "[Release] Multiple releases aborted"
-    bulkBody: |-
-      The following releases have been aborted:
-
-      ${#releases}
-      * [${title}](${url})
-      ${/releases}
+    roles:
+    - Release Admin
+  - notification: RELEASE_STARTED
+    priority: Normal
+    subject: "[Release] ${release.title}"
+    body: test
     roles:
     - Release Admin
   - notification: ACTIVE_TASK_ASSIGNED
