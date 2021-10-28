@@ -1,6 +1,6 @@
 # Exported from:        http://pop-os:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Thu Oct 28 11:47:43 CEST 2021
+# Date created:         Thu Oct 28 11:53:24 CEST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -434,7 +434,7 @@ spec:
   releaseFolder: ./
   pollType: REPEAT
   periodicity: "100"
-  triggerTime: 2021-10-28T11:46:13.639000
+  triggerTime: 2021-10-28T11:52:35.276000
 - name: trigger2
   type: time.Schedule
   releaseTitle: fdsafsafsafsaf
@@ -442,7 +442,7 @@ spec:
   releaseFolder: ./
   pollType: REPEAT
   periodicity: "300"
-  triggerTime: 2021-10-28T11:44:33.667000
+  triggerTime: 2021-10-28T11:51:11.768000
 - directory: sub1
   children:
   - pattern: sub1p1
@@ -450,6 +450,19 @@ spec:
     - stage: New Stage
   - template: sub1t1
     scheduledStartDate: 2021-10-28T09:00:00+02:00
+    dueDate: 2021-10-28T10:00:00+02:00
     phases:
     - phase: New Phase
     riskProfile: Default risk profile
+  - name: webhook trigger
+    type: events.EventBasedTrigger
+    mappedProperties:
+    - type: xlrelease.StringValue
+      targetProperty: releaseTitle
+      value: releaseTitle
+    - type: xlrelease.StringValue
+      targetProperty: template
+      value: sub1t1
+    triggerActionType: xlrelease.CreateReleaseFromTemplateAction
+    eventSource: webhook1
+    eventType: events.HttpRequestEvent
