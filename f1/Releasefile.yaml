@@ -1,6 +1,6 @@
 # Exported from:        http://pop-os:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Thu Oct 28 12:09:07 CEST 2021
+# Date created:         Thu Oct 28 12:12:27 CEST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -432,7 +432,7 @@ spec:
   - pattern: sub1p1
     stages:
     - stage: New Stage
-  - template: sub1t1_changedName
+  - template: sub1t1_changedNameAgain
     scheduledStartDate: 2021-10-28T09:00:00+02:00
     dueDate: 2021-10-28T10:00:00+02:00
     phases:
