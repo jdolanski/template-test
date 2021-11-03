@@ -1,6 +1,6 @@
 # Exported from:        http://pop-os:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Thu Oct 28 12:12:27 CEST 2021
+# Date created:         Wed Nov 03 11:07:20 CET 2021
 
 ---
 apiVersion: xl-release/v1
@@ -8,6 +8,17 @@ kind: Templates
 metadata:
   home: f1
 spec:
+- directory: sub1
+  children:
+  - pattern: sub1p1
+    stages:
+    - stage: New Stage
+  - template: sub1t1_changedNameAgain
+    scheduledStartDate: 2021-10-28T09:00:00+02:00
+    dueDate: 2021-10-28T10:00:00+02:00
+    phases:
+    - phase: New Phase
+    riskProfile: Default risk profile
 - folderVariables:
   - type: xlrelease.StringVariable
     key: folder.var1
@@ -41,400 +52,141 @@ spec:
   phases:
   - phase: New Phase
   riskProfile: Default risk profile
-- name: Deployments
-  type: xlrelease.DeploymentsByStageDashboard
-  owner: admin
-  tiles:
-  - type: xlrelease.PlaceholderTile
-    row: 0
-    col: 0
-    content: Development
-  - name: Current applications
-    type: deployment.CurrentApplicationsTile
-    width: 1
-    height: 1
-    row: 1
-    col: 0
-    filters:
-    - type: xlrelease.EnvironmentStageFilter
-      stage: Development
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-      timeFrame: LAST_MONTH
-  - name: Activity
-    type: deployment.DeploymentsActivityTile
-    width: 1
-    row: 2
-    col: 0
-    filters:
-    - type: xlrelease.EnvironmentStageFilter
-      stage: Development
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-      timeFrame: LAST_MONTH
-  - name: Total deployments
-    type: deployment.TotalDeploymentsTile
-    width: 1
-    height: 1
-    row: 4
-    col: 0
-    filters:
-    - type: xlrelease.EnvironmentStageFilter
-      stage: Development
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-      timeFrame: LAST_MONTH
-  - name: Deployments
-    type: deployment.DeploymentsDistributionTile
-    width: 1
-    row: 5
-    col: 0
-    filters:
-    - type: xlrelease.EnvironmentStageFilter
-      stage: Development
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-      timeFrame: LAST_MONTH
-    height: 1
-  - name: Deployment success rate
-    type: deployment.DeploymentsSuccessRateTile
-    width: 1
-    height: 1
-    row: 6
-    col: 0
-    filters:
-    - type: xlrelease.EnvironmentStageFilter
-      stage: Development
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-      timeFrame: LAST_MONTH
-  - type: xlrelease.PlaceholderTile
-    row: 0
-    col: 1
-    content: Test
-  - name: Current applications
-    type: deployment.CurrentApplicationsTile
-    width: 1
-    height: 1
-    row: 1
-    col: 1
-    filters:
-    - type: xlrelease.EnvironmentStageFilter
-      stage: Test
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-      timeFrame: LAST_MONTH
-  - name: Activity
-    type: deployment.DeploymentsActivityTile
-    width: 1
-    row: 2
-    col: 1
-    filters:
-    - type: xlrelease.EnvironmentStageFilter
-      stage: Test
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-      timeFrame: LAST_MONTH
-  - name: Total deployments
-    type: deployment.TotalDeploymentsTile
-    width: 1
-    height: 1
-    row: 4
-    col: 1
-    filters:
-    - type: xlrelease.EnvironmentStageFilter
-      stage: Test
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-      timeFrame: LAST_MONTH
-  - name: Deployments
-    type: deployment.DeploymentsDistributionTile
-    width: 1
-    row: 5
-    col: 1
-    filters:
-    - type: xlrelease.EnvironmentStageFilter
-      stage: Test
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-      timeFrame: LAST_MONTH
-    height: 1
-  - name: Deployment success rate
-    type: deployment.DeploymentsSuccessRateTile
-    width: 1
-    height: 1
-    row: 6
-    col: 1
-    filters:
-    - type: xlrelease.EnvironmentStageFilter
-      stage: Test
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-      timeFrame: LAST_MONTH
-  - type: xlrelease.PlaceholderTile
-    row: 0
-    col: 2
-    content: Acceptance
-  - name: Current applications
-    type: deployment.CurrentApplicationsTile
-    width: 1
-    height: 1
-    row: 1
-    col: 2
-    filters:
-    - type: xlrelease.EnvironmentStageFilter
-      stage: Acceptance
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-      timeFrame: LAST_MONTH
-  - name: Activity
-    type: deployment.DeploymentsActivityTile
-    width: 1
-    row: 2
-    col: 2
-    filters:
-    - type: xlrelease.EnvironmentStageFilter
-      stage: Acceptance
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-      timeFrame: LAST_MONTH
-  - name: Total deployments
-    type: deployment.TotalDeploymentsTile
-    width: 1
-    height: 1
-    row: 4
-    col: 2
-    filters:
-    - type: xlrelease.EnvironmentStageFilter
-      stage: Acceptance
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-      timeFrame: LAST_MONTH
-  - name: Deployments
-    type: deployment.DeploymentsDistributionTile
-    width: 1
-    row: 5
-    col: 2
-    filters:
-    - type: xlrelease.EnvironmentStageFilter
-      stage: Acceptance
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-      timeFrame: LAST_MONTH
-    height: 1
-  - name: Deployment success rate
-    type: deployment.DeploymentsSuccessRateTile
-    width: 1
-    height: 1
-    row: 6
-    col: 2
-    filters:
-    - type: xlrelease.EnvironmentStageFilter
-      stage: Acceptance
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-      timeFrame: LAST_MONTH
-  - type: xlrelease.PlaceholderTile
-    row: 0
-    col: 3
-    content: Production
-  - name: Current applications
-    type: deployment.CurrentApplicationsTile
-    width: 1
-    height: 1
-    row: 1
-    col: 3
-    filters:
-    - type: xlrelease.EnvironmentStageFilter
-      stage: Production
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-      timeFrame: LAST_MONTH
-  - name: Activity
-    type: deployment.DeploymentsActivityTile
-    width: 1
-    row: 2
-    col: 3
-    filters:
-    - type: xlrelease.EnvironmentStageFilter
-      stage: Production
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-      timeFrame: LAST_MONTH
-  - name: Total deployments
-    type: deployment.TotalDeploymentsTile
-    width: 1
-    height: 1
-    row: 4
-    col: 3
-    filters:
-    - type: xlrelease.EnvironmentStageFilter
-      stage: Production
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-      timeFrame: LAST_MONTH
-  - name: Deployments
-    type: deployment.DeploymentsDistributionTile
-    width: 1
-    row: 5
-    col: 3
-    filters:
-    - type: xlrelease.EnvironmentStageFilter
-      stage: Production
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-      timeFrame: LAST_MONTH
-    height: 1
-  - name: Deployment success rate
-    type: deployment.DeploymentsSuccessRateTile
-    width: 1
-    height: 1
-    row: 6
-    col: 3
-    filters:
-    - type: xlrelease.EnvironmentStageFilter
-      stage: Production
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-      timeFrame: LAST_MONTH
-  columns: 4
-  filters:
-  - type: xlrelease.FolderFilter
-    folder: ./
-  - type: xlrelease.DateFilter
-    timeFrame: LAST_MONTH
-- name: Release statistics
-  type: xlrelease.ReleaseStatisticsDashboard
-  owner: admin
-  tiles:
-  - name: Longest task type
-    type: xlrelease.LongestTaskTypeTile
-    row: 0
-    col: 1
-    filters:
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-  - name: Number of releases
-    type: xlrelease.ReleasesByMonthTile
-    row: 2
-    col: 3
-    filters:
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-  - name: Release efficiency
-    type: xlrelease.ReleaseEfficiencyTile
-    row: 2
-    col: 0
-    filters:
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-  - name: Avg. task duration
-    type: xlrelease.AvgTaskDurationTile
-    row: 1
-    col: 1
-    filters:
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-  - name: Time spent by task category
-    type: xlrelease.TaskTimeSpentTile
-    row: 0
-    col: 4
-    filters:
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-  - name: Completed releases
-    type: xlrelease.CompletedReleasesTile
-    row: 0
-    col: 0
-    filters:
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-  - name: Avg. release duration
-    type: xlrelease.AvgReleaseDurationTile
-    row: 1
-    col: 0
-    filters:
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-  - name: Task efficiency
-    type: xlrelease.TaskEfficiencyTile
-    row: 0
-    col: 2
-    filters:
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-  - name: Top 10 longest releases
-    type: xlrelease.LongestReleasesTile
-    row: 4
-    col: 0
-    filters:
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-  - name: Avg. release duration over time
-    type: xlrelease.AvgReleaseDurationByMonthTile
-    row: 4
-    col: 3
-    filters:
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-  - name: Top 10 longest phases
-    type: xlrelease.LongestPhasesTile
-    row: 6
-    col: 0
-    filters:
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-  - name: Top 10 longest tasks
-    type: xlrelease.LongestTasksTile
-    row: 6
-    col: 3
-    filters:
-    - type: xlrelease.FolderFilter
-      folder: ./
-    - type: xlrelease.DateFilter
-  filters:
-  - type: xlrelease.FolderFilter
-    folder: ./
-  - type: xlrelease.DateFilter
+---
+apiVersion: xl-release/v1
+kind: Permissions
+metadata:
+  home: f1
+spec:
+- directory: "."
+  teams:
+  - name: Template Owner
+    users:
+    - admin
+    permissions:
+    - template#edit
+    - trigger#view_trigger
+    - template#lock_task
+    - template#view
+    - folder#view
+    - template#edit_security
+    - template#create_release
+    - template#edit_triggers
+    - template#edit_precondition
+    - template#edit_failure_handler
+  - name: Release Admin
+    users:
+    - admin
+    permissions:
+    - release#edit_precondition
+    - release#edit
+    - release#edit_task_attachments
+    - release#task_transition
+    - trigger#view_trigger
+    - release#reassign_task
+    - release#edit_task_input_output_properties
+    - release#edit_task_tags
+    - release#edit_security
+    - release#edit_task_description
+    - trigger#edit_trigger
+    - release#view
+    - release#lock_task
+    - release#start
+    - release#edit_blackout
+    - release#edit_failure_handler
+    - folder#view
+    - release#abort
+    - release#edit_task_script
+    - release#edit_task_configuration_facet
+    - release#edit_task_flag
+    - release#edit_task_dates
+    - release#edit_task
+  - name: Folder Owner
+    users:
+    - admin
+    permissions:
+    - folder#edit_variables
+    - delivery_pattern#edit
+    - folder#edit_configuration
+    - delivery#edit
+    - folder#view_versions
+    - folder#apply_changes
+    - group#view
+    - folder#edit_versions
+    - folder#edit_notifications
+    - delivery_pattern#view
+    - group#edit
+    - delivery#view
+    - delivery#edit_tracked_item
+    - folder#view
+    - folder#edit_security
+    - dashboard#edit
+    - folder#edit
+    - dashboard#view
+    - folder#generate_configuration
 - directory: sub1
-  children:
-  - pattern: sub1p1
-    stages:
-    - stage: New Stage
-  - template: sub1t1_changedNameAgain
-    scheduledStartDate: 2021-10-28T09:00:00+02:00
-    dueDate: 2021-10-28T10:00:00+02:00
-    phases:
-    - phase: New Phase
-    riskProfile: Default risk profile
+  teams:
+  - name: Template Owner
+    users:
+    - admin
+    permissions:
+    - template#edit
+    - trigger#view_trigger
+    - template#lock_task
+    - template#view
+    - folder#view
+    - template#edit_security
+    - template#create_release
+    - template#edit_triggers
+    - template#edit_precondition
+    - template#edit_failure_handler
+  - name: Release Admin
+    users:
+    - admin
+    permissions:
+    - release#edit_precondition
+    - release#edit
+    - release#edit_task_attachments
+    - release#task_transition
+    - trigger#view_trigger
+    - release#reassign_task
+    - release#edit_task_input_output_properties
+    - release#edit_task_tags
+    - release#edit_security
+    - release#edit_task_description
+    - trigger#edit_trigger
+    - release#view
+    - release#lock_task
+    - release#start
+    - release#edit_blackout
+    - release#edit_failure_handler
+    - folder#view
+    - release#abort
+    - release#edit_task_script
+    - release#edit_task_configuration_facet
+    - release#edit_task_flag
+    - release#edit_task_dates
+    - release#edit_task
+  - name: Folder Owner
+    users:
+    - admin
+    permissions:
+    - folder#edit_variables
+    - delivery_pattern#edit
+    - folder#edit_configuration
+    - delivery#edit
+    - folder#view_versions
+    - folder#apply_changes
+    - group#view
+    - folder#edit_versions
+    - folder#edit_notifications
+    - delivery_pattern#view
+    - group#edit
+    - delivery#view
+    - delivery#edit_tracked_item
+    - folder#view
+    - folder#edit_security
+    - dashboard#edit
+    - folder#edit
+    - dashboard#view
+    - folder#generate_configuration
