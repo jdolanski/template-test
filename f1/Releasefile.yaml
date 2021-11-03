@@ -1,6 +1,6 @@
 # Exported from:        http://pop-os:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Wed Nov 03 12:13:09 CET 2021
+# Date created:         Wed Nov 03 14:17:17 CET 2021
 
 ---
 apiVersion: xl-release/v1
@@ -8,6 +8,9 @@ kind: Templates
 metadata:
   home: f1
 spec:
+- folderVariables:
+  - type: xlrelease.PasswordStringVariable
+    key: folder.passvarForConf
 - name: jenkinsReferencingVar
   type: jenkins.Server
   variableMapping:
