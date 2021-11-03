@@ -1,6 +1,6 @@
 # Exported from:        http://pop-os:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Wed Nov 03 11:29:12 CET 2021
+# Date created:         Wed Nov 03 11:29:44 CET 2021
 
 ---
 apiVersion: xl-release/v1
@@ -15,7 +15,6 @@ spec:
       type: test.Test2ValueProvider
       jiraServer: test_jira_server
       username: admin
-      password: !value "test_Test2ValueProvider_folder_jira_server_pass_password"
 - name: jenkins1
   type: jenkins.Server
   url: test
