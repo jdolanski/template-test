@@ -1,6 +1,6 @@
 # Exported from:        http://pop-os:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Wed Nov 03 12:02:27 CET 2021
+# Date created:         Wed Nov 03 12:12:43 CET 2021
 
 ---
 apiVersion: xl-release/v1
@@ -9,12 +9,14 @@ metadata:
   home: f1
 spec:
 - folderVariables:
-  - type: xlrelease.StringVariable
-    key: folder.jira_server_pass
-    valueProvider:
-      type: test.Test2ValueProvider
-      jiraServer: test_jira_server
-      username: admin
+  - type: xlrelease.PasswordStringVariable
+    key: folder.passvarForConf
+- name: jenkinsReferencingVar
+  type: jenkins.Server
+  variableMapping:
+    password: "${folder.passvarForConf}"
+  url: a
+  username: admin
 - pattern: pattern1
   stages:
   - stage: New Stage
