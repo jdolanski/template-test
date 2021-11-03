@@ -1,6 +1,6 @@
 # Exported from:        http://pop-os:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Wed Nov 03 11:59:22 CET 2021
+# Date created:         Wed Nov 03 12:01:54 CET 2021
 
 ---
 apiVersion: xl-release/v1
@@ -15,6 +15,12 @@ spec:
       type: test.Test2ValueProvider
       jiraServer: test_jira_server
       username: admin
+- name: jenkins1
+  type: jenkins.Server
+  url: test
+- name: test_jira_server
+  type: jira.Server
+  url: test
 - pattern: pattern1
   stages:
   - stage: New Stage
@@ -33,9 +39,6 @@ spec:
       type: xlrelease.Task
     - name: c
       type: xlrelease.Task
-    - name: abc
-      type: jenkins.Build
-      jenkinsServer: jenkins1
   riskProfile: Default risk profile
 - template: template2
   scheduledStartDate: 2021-10-26T09:00:00+02:00
