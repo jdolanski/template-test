@@ -1,6 +1,6 @@
 # Exported from:        http://pop-os:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Thu Nov 04 13:43:24 CET 2021
+# Date created:         Thu Nov 04 13:50:38 CET 2021
 
 ---
 apiVersion: xl-release/v1
@@ -8,10 +8,16 @@ kind: Templates
 metadata:
   home: test_folder1
 spec:
+- pattern: pattern1
+  stages:
+  - stage: New Stage
 - template: template1
   scheduledStartDate: 2021-11-04T09:00:00+01:00
   phases:
   - phase: New Phase
+    tasks:
+    - name: a
+      type: jenkins.Build
   riskProfile: Default risk profile
 - name: trig1
   type: time.Schedule
