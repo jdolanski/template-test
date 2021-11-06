@@ -1,6 +1,6 @@
 # Exported from:        http://pop-os:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Sat Nov 06 14:30:04 CET 2021
+# Date created:         Sat Nov 06 15:06:09 CET 2021
 
 ---
 apiVersion: xl-release/v1
@@ -9,69 +9,6 @@ metadata:
   home: f1
 spec:
 - directory: f1_sub
-  children:
-  - pattern: sub1p1
-    stages:
-    - stage: New Stage
-  - template: template1_sub
-    scheduledStartDate: 2021-11-05T09:00:00+01:00
-    dueDate: 2021-11-05T10:00:00+01:00
-    phases:
-    - phase: New Phase
-    riskProfile: Default risk profile
-- folderVariables:
-  - type: xlrelease.StringVariable
-    key: folder.var1
-    value: val1
-  - type: xlrelease.StringVariable
-    key: folder.var2
-    value: val2
-- name: conf1
-  type: jenkins.Server
-  url: url
-- name: conf2
-  type: jenkins.Server
-  url: url
-- pattern: pattern1
-  stages:
-  - stage: New Stage
-- pattern: pattern2
-  stages:
-  - stage: New Stage
-- template: template1
-  scheduledStartDate: 2021-10-26T09:00:00+02:00
-  dueDate: 2021-10-26T10:00:00+02:00
-  phases:
-  - phase: New Phase
-  riskProfile: Default risk profile
-- template: template2
-  scheduledStartDate: 2021-10-26T09:00:00+02:00
-  dueDate: 2021-10-26T10:00:00+02:00
-  phases:
-  - phase: New Phase
-  riskProfile: Default risk profile
-- name: dasboard1
-  type: xlrelease.BlankDashboard
-  owner: admin
-- name: dashboard2
-  type: xlrelease.BlankDashboard
-  owner: admin
-- name: trigger1
-  type: time.Schedule
-  releaseTitle: trigger1_release
-  template: template1
-  pollType: REPEAT
-  periodicity: "10000"
-  enabled: false
-  triggerTime: 2021-11-05T14:24:46.607000
-- name: trigger2
-  type: time.Schedule
-  releaseTitle: trigger2_release
-  template: template2
-  pollType: REPEAT
-  periodicity: "10000"
-  enabled: false
-  triggerTime: 2021-11-05T14:25:11.971000
 ---
 apiVersion: xl-release/v1
 kind: Permissions
@@ -146,6 +83,33 @@ spec:
     - release#edit_task
 - directory: f1_sub
   teams:
+  - name: Release Admin
+    users:
+    - admin
+    permissions:
+    - release#edit_precondition
+    - release#edit
+    - release#edit_task_attachments
+    - release#task_transition
+    - trigger#view_trigger
+    - release#reassign_task
+    - release#edit_task_input_output_properties
+    - release#edit_task_tags
+    - release#edit_security
+    - release#edit_task_description
+    - trigger#edit_trigger
+    - release#view
+    - release#lock_task
+    - release#start
+    - release#edit_blackout
+    - release#edit_failure_handler
+    - folder#view
+    - release#abort
+    - release#edit_task_script
+    - release#edit_task_configuration_facet
+    - release#edit_task_flag
+    - release#edit_task_dates
+    - release#edit_task
   - name: Folder Owner
     users:
     - admin
@@ -183,30 +147,3 @@ spec:
     - template#edit_triggers
     - template#edit_precondition
     - template#edit_failure_handler
-  - name: Release Admin
-    users:
-    - admin
-    permissions:
-    - release#edit_precondition
-    - release#edit
-    - release#edit_task_attachments
-    - release#task_transition
-    - trigger#view_trigger
-    - release#reassign_task
-    - release#edit_task_input_output_properties
-    - release#edit_task_tags
-    - release#edit_security
-    - release#edit_task_description
-    - trigger#edit_trigger
-    - release#view
-    - release#lock_task
-    - release#start
-    - release#edit_blackout
-    - release#edit_failure_handler
-    - folder#view
-    - release#abort
-    - release#edit_task_script
-    - release#edit_task_configuration_facet
-    - release#edit_task_flag
-    - release#edit_task_dates
-    - release#edit_task
