@@ -1,6 +1,6 @@
 # Exported from:        http://pop-os:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Wed Nov 17 13:44:59 CET 2021
+# Date created:         Wed Nov 17 14:10:39 CET 2021
 
 ---
 apiVersion: xl-release/v1
@@ -11,15 +11,6 @@ spec:
 - pattern: pattern1
   stages:
   - stage: New Stage
-- pattern: pattern2
-  stages:
-  - stage: New Stage
-- template: template1
-  scheduledStartDate: 2021-10-26T09:00:00+02:00
-  dueDate: 2021-10-26T10:00:00+02:00
-  phases:
-  - phase: New Phase
-  riskProfile: Default risk profile
 - template: template2
   scheduledStartDate: 2021-10-26T09:00:00+02:00
   dueDate: 2021-10-26T10:00:00+02:00
@@ -27,9 +18,6 @@ spec:
   - phase: New Phase
   riskProfile: Default risk profile
 - name: dasboard1
-  type: xlrelease.BlankDashboard
-  owner: admin
-- name: dashboard2
   type: xlrelease.BlankDashboard
   owner: admin
 - name: trigger2
