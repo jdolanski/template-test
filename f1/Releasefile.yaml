@@ -1,6 +1,6 @@
 # Exported from:        http://pop-os:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Wed Nov 17 14:10:39 CET 2021
+# Date created:         Mon Nov 22 12:52:29 CET 2021
 
 ---
 apiVersion: xl-release/v1
@@ -8,9 +8,26 @@ kind: Templates
 metadata:
   home: f1
 spec:
+- name: conf1
+  type: jenkins.Server
+  url: url
+  password: !value "jenkins_Server_conf1_password"
+- name: conf2
+  type: jenkins.Server
+  url: url
+  password: !value "jenkins_Server_conf2_password"
 - pattern: pattern1
   stages:
   - stage: New Stage
+- pattern: pattern2
+  stages:
+  - stage: New Stage
+- template: template1
+  scheduledStartDate: 2021-10-26T09:00:00+02:00
+  dueDate: 2021-10-26T10:00:00+02:00
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
 - template: template2
   scheduledStartDate: 2021-10-26T09:00:00+02:00
   dueDate: 2021-10-26T10:00:00+02:00
@@ -20,6 +37,17 @@ spec:
 - name: dasboard1
   type: xlrelease.BlankDashboard
   owner: admin
+- name: dashboard2
+  type: xlrelease.BlankDashboard
+  owner: admin
+- name: trigger1
+  type: time.Schedule
+  releaseTitle: trigger1_release
+  template: template1
+  pollType: REPEAT
+  periodicity: "10000"
+  enabled: false
+  triggerTime: 2021-11-05T14:24:46.607000
 - name: trigger2
   type: time.Schedule
   releaseTitle: trigger2_release
