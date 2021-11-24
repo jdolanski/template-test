@@ -1,6 +1,6 @@
 # Exported from:        http://pop-os:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Mon Nov 22 18:14:03 CET 2021
+# Date created:         Wed Nov 24 17:56:10 CET 2021
 
 ---
 apiVersion: xl-release/v1
@@ -11,6 +11,7 @@ spec:
 - name: conf1
   type: jenkins.Server
   url: url
+  username: username
   password: !value "jenkins_Server_conf1_password"
 - name: conf2
   type: jenkins.Server
