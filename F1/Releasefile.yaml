@@ -15,7 +15,7 @@ spec:
     tasks:
     - name: a
       type: xlrelease.Task
-      description: description
+      description: !value "xlrelease_Release_template1_scriptUserPassword"
   scriptUsername: admin
   scriptUserPassword: !value "xlrelease_Release_template1_scriptUserPassword"
   riskProfile: Default risk profile
