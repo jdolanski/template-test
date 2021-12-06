@@ -1,0 +1,21 @@
+# Exported from:        http://pop-os:5516/
+# Release version:      10.2.0-20210603-123974
+# Date created:         Mon Dec 06 21:55:07 CET 2021
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  home: f1
+spec:
+- template: template1
+  scheduledStartDate: 2021-12-06T09:00:00+01:00
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: a
+      type: xlrelease.Task
+      description: description
+  scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_template1_scriptUserPassword"
+  riskProfile: Default risk profile
