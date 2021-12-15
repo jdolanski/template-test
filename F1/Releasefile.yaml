@@ -1,21 +1,38 @@
 # Exported from:        http://pop-os:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Mon Dec 06 21:55:07 CET 2021
+# Date created:         Wed Dec 15 13:24:14 CET 2021
 
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  home: f1
+  home: f1/f2
 spec:
+- name: f2_jenkins
+  type: jenkins.Server
+  url: a
 - template: template1
   scheduledStartDate: 2021-12-06T09:00:00+01:00
+  dueDate: 2021-12-06T10:00:00+01:00
   phases:
   - phase: New Phase
     tasks:
+    - name: internal jenkins
+      type: jenkins.Build
+      jenkinsServer: f2_jenkins
+    - name: external jenkins
+      type: jenkins.Build
+      jenkinsServer: f1_jenkins
     - name: a
       type: xlrelease.Task
-      description: !value "xlrelease_Release_template1_scriptUserPassword"
+      description: '!value xlrelease_Release_template1_scriptUserPassword'
   scriptUsername: admin
-  scriptUserPassword: !value "xlrelease_Release_template1_scriptUserPassword"
   riskProfile: Default risk profile
+- name: trigger1
+  type: time.Schedule
+  releaseTitle: test
+  template: template1
+  releaseFolder: f1
+  pollType: REPEAT
+  periodicity: "1000000"
+  enabled: false
