@@ -1,6 +1,6 @@
 # Exported from:        http://pop-os:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Wed Dec 15 13:24:14 CET 2021
+# Date created:         Wed Dec 15 13:41:48 CET 2021
 
 ---
 apiVersion: xl-release/v1
@@ -20,13 +20,18 @@ spec:
     - name: internal jenkins
       type: jenkins.Build
       jenkinsServer: f2_jenkins
+      password: !value "jenkins_Build_internal_jenkins_password"
+      jobName: job
     - name: external jenkins
       type: jenkins.Build
       jenkinsServer: f1_jenkins
+      password: !value "jenkins_Build_external_jenkins_password"
+      jobName: job2
     - name: a
       type: xlrelease.Task
       description: '!value xlrelease_Release_template1_scriptUserPassword'
   scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_template1_scriptUserPassword"
   riskProfile: Default risk profile
 - name: trigger1
   type: time.Schedule
