@@ -1,6 +1,6 @@
 # Exported from:        http://pop-os:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Mon Dec 20 19:52:03 CET 2021
+# Date created:         Mon Dec 20 19:53:40 CET 2021
 
 ---
 apiVersion: xl-release/v1
@@ -47,32 +47,3 @@ spec:
 - name: dashboard
   type: xlrelease.BlankDashboard
   owner: admin
-- name: trigger
-  type: time.Schedule
-  releaseTitle: test
-  variables:
-  - type: xlrelease.StringVariable
-    key: testlb
-    valueProvider:
-      type: xlrelease.ListOfStringValueProviderConfiguration
-      values:
-      - a
-      - b
-      - c
-    value: a
-  - type: xlrelease.ListStringVariable
-    key: testmlb
-    valueProvider:
-      type: xlrelease.ListOfStringValueProviderConfiguration
-      values:
-      - a
-      - b
-      - c
-    value:
-    - a
-    - b
-  template: template2
-  releaseFolder: ./
-  pollType: REPEAT
-  periodicity: "10000"
-  enabled: false
