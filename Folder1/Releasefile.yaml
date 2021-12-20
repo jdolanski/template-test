@@ -13,7 +13,7 @@ spec:
     key: folder.token
     value: !value "xlrelease_PasswordStringVariable_folder_token_value"
   - type: xlrelease.StringVariable
-    key: folder.teststring
+    key: folder.teststringexternal
 - pattern: pattern1
   stages:
   - stage: New Stage
