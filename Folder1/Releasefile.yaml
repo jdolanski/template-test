@@ -1,6 +1,6 @@
 # Exported from:        http://pop-os:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Mon Dec 20 18:33:43 CET 2021
+# Date created:         Mon Dec 20 18:54:33 CET 2021
 
 ---
 apiVersion: xl-release/v1
@@ -12,8 +12,17 @@ spec:
   - type: xlrelease.PasswordStringVariable
     key: folder.token
     value: !value "xlrelease_PasswordStringVariable_folder_token_value"
+  - type: xlrelease.StringVariable
+    key: folder.teststring
+- pattern: pattern1
+  stages:
+  - stage: New Stage
 - template: template1
   scheduledStartDate: 2021-12-20T09:00:00+01:00
+  dueDate: 2021-12-20T10:00:00+01:00
   phases:
   - phase: phase1
   riskProfile: Default risk profile
+- name: dashboard
+  type: xlrelease.BlankDashboard
+  owner: admin
