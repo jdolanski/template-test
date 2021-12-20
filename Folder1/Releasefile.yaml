@@ -1,6 +1,6 @@
 # Exported from:        http://pop-os:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Mon Dec 20 19:34:09 CET 2021
+# Date created:         Mon Dec 20 19:50:47 CET 2021
 
 ---
 apiVersion: xl-release/v1
@@ -31,7 +31,7 @@ spec:
       - a
       - b
       - c
-    value: a
+    value: b
   riskProfile: Default risk profile
 - name: dashboard
   type: xlrelease.BlankDashboard
