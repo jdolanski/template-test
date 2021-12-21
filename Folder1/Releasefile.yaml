@@ -1,6 +1,6 @@
 # Exported from:        http://pop-os:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Mon Dec 20 19:53:40 CET 2021
+# Date created:         Tue Dec 21 22:38:42 CET 2021
 
 ---
 apiVersion: xl-release/v1
@@ -32,17 +32,6 @@ spec:
       - b
       - c
     value: a
-  - type: xlrelease.ListStringVariable
-    key: testmlb
-    valueProvider:
-      type: xlrelease.ListOfStringValueProviderConfiguration
-      values:
-      - a
-      - b
-      - c
-    value:
-    - a
-    - b
   riskProfile: Default risk profile
 - name: dashboard
   type: xlrelease.BlankDashboard
