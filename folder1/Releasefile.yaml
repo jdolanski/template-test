@@ -1,0 +1,31 @@
+# Exported from:        http://pop-os:5516/
+# Release version:      10.3.5
+# Date created:         Tue Dec 21 21:00:29 CET 2021
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  home: folder1
+spec:
+- template: template1
+  scheduledStartDate: 2021-12-21T09:00:00+01:00
+  phases:
+  - phase: New Phase
+  variables:
+  - type: xlrelease.StringVariable
+    key: var1
+    value: value3
+  riskProfile: Default risk profile
+- name: trigger1
+  type: time.Schedule
+  releaseTitle: release
+  variables:
+  - type: xlrelease.StringVariable
+    key: var1
+    value: value3
+  template: template1
+  releaseFolder: ./
+  pollType: REPEAT
+  periodicity: "10000"
+  enabled: false
