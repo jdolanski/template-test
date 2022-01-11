@@ -1,6 +1,6 @@
 # Exported from:        http://pop-os:5516/
-# Release version:      10.3.5
-# Date created:         Tue Dec 21 21:12:49 CET 2021
+# Release version:      10.4.0-SNAPSHOT
+# Date created:         Tue Jan 11 12:00:05 CET 2022
 
 ---
 apiVersion: xl-release/v1
@@ -13,4 +13,17 @@ spec:
   dueDate: 2021-12-21T10:00:00+01:00
   phases:
   - phase: New Phase
+  variables:
+  - type: xlrelease.StringVariable
+    key: var1
+    value: value5
+  - type: xlrelease.StringVariable
+    key: listbox
+    valueProvider:
+      type: xlrelease.ListOfStringValueProviderConfiguration
+      values:
+      - a
+      - b
+      - c
+    value: b
   riskProfile: Default risk profile
