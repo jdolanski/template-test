@@ -1,18 +1,13 @@
 # Exported from:        http://pop-os:5516/
-# Release version:      22.0.0-20211220-123974
-# Date created:         Thu Jan 20 15:11:45 CET 2022
+# Release version:      22.1.0-121.113
+# Date created:         Fri Jan 21 12:59:03 CET 2022
 
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  home: folder1
+  home: Folder1
 spec:
-- folderVariables:
-  - type: xlrelease.StringVariable
-    key: folder.teststringexternal
-  - type: xlrelease.PasswordStringVariable
-    key: folder.token
 - name: jenkins1
   type: jenkins.Server
   url: test
