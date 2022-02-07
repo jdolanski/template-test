@@ -1,6 +1,6 @@
 # Exported from:        http://pop-os:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Mon Feb 07 13:38:14 CET 2022
+# Date created:         Mon Feb 07 14:37:12 CET 2022
 
 ---
 apiVersion: xl-release/v1
@@ -9,21 +9,26 @@ metadata:
   home: Folder1
 spec:
 - folderVariables:
-  - type: xlrelease.StringVariable
-    key: folder.teststringexternal
   - type: xlrelease.PasswordStringVariable
     key: folder.token
-- template: template2
+  - type: xlrelease.PasswordStringVariable
+    key: folder.script_user_password
+    value: !value "xlrelease_PasswordStringVariable_folder_script_user_password_value"
+- name: Jenkins server
+  type: jenkins.Server
+  url: test
+  username: test
+- template: Versioned template
   scheduledStartDate: 2021-12-20T09:00:00+01:00
   dueDate: 2021-12-20T10:00:00+01:00
   phases:
   - phase: phase1
     tasks:
-    - name: jenkins task
+    - name: Jenkins build
       type: jenkins.Build
-      jenkinsServer: jenkins1
-      password: !value "jenkins_Build_jenkins_task_password"
-      apiToken: !value "jenkins_Build_jenkins_task_apiToken"
+      jenkinsServer: Jenkins server
+      password: !value "jenkins_Build_Jenkins_build_password"
+      apiToken: !value "jenkins_Build_Jenkins_build_apiToken"
     - name: a
       type: xlrelease.GateTask
     - name: a
@@ -43,6 +48,7 @@ spec:
       - c
     value: a
   scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_Versioned_template_scriptUserPassword"
   riskProfile: Default risk profile
 - name: dashboard
   type: xlrelease.BlankDashboard
@@ -60,7 +66,7 @@ spec:
       - b
       - c
     value: a
-  template: template2
+  template: Versioned template
   releaseFolder: Samples & Tutorials
   pollType: REPEAT
   periodicity: "10101001"
