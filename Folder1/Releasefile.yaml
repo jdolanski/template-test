@@ -1,19 +1,17 @@
 # Exported from:        http://pop-os:5516/
-# Release version:      22.1.0-121.113
-# Date created:         Fri Jan 21 12:59:03 CET 2022
+# Release version:      22.0.0-20211220-123974
+# Date created:         Tue Feb 15 13:31:34 CET 2022
 
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  home: Folder1
+  home: folder1
 spec:
 - name: jenkins1
   type: jenkins.Server
   url: test
   username: test
-  password: !value "jenkins_Server_jenkins1_password"
-  apiToken: !value "jenkins_Server_jenkins1_apiToken"
 - pattern: pattern1
   stages:
   - stage: New Stage
@@ -33,7 +31,6 @@ spec:
       - c
     value: a
   scriptUsername: admin
-  scriptUserPassword: !value "xlrelease_Release_template2_scriptUserPassword"
   riskProfile: Default risk profile
 - name: dashboard
   type: xlrelease.BlankDashboard
