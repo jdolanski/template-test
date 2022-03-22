@@ -1,6 +1,6 @@
 // Exported from:        http://pop-os:5516/#/templates/FolderSamplesAndTutorials-ReleaseTemplate_configure/code
 // Release version:      22.0.2
-// Date created:         Tue Mar 22 13:27:56 CET 2022
+// Date created:         Tue Mar 22 13:38:08 CET 2022
 
 xlr {
   template('Configure Release') {
